@@ -1,0 +1,40 @@
+.colaborador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: min-content;
+  border-radius: 10px;
+}
+
+.contentIMG {
+  height: 90px;
+  background-color: #57c278;
+  padding-top: 40px;
+  padding-inline: 71px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.colaborador img {
+  width: 120px;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+.conteudo {
+  margin-top: 87px;
+}
+.conteudo h4 {
+  color: #6278f7;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 10px;
+}
+.conteudo h5 {
+  color: #212121;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  width: 200px;
+  padding-bottom: 27px;
+}
