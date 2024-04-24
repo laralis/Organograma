@@ -1,4 +1,3 @@
-import rodape from "../../assets/rodape.png";
 import logo from "../../assets/Logo.png";
 import facebook from "../../assets/facebook.png";
 import instagram from "../../assets/instagram.png";

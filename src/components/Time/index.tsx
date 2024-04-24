@@ -1,11 +1,18 @@
-import { Colaborador } from "../Colaborador";
+import { IColaborador } from "../../compartilhado/interface/IColaborador";
+import { Colaborador } from '../Colaborador';
 import "./Time.css";
+interface TimeProps{
+  nome:string,
+  corPrimaria:string,
+  corSecundaria:string,
+  colaboradores:IColaborador[]
+}
 export function Time({
   nome,
   corPrimaria,
   corSecundaria,
   colaboradores,
-} = props) {
+} :TimeProps) {
   const estilos = { backgroundColor: corSecundaria };
   const border = { borderBottomColor: corPrimaria };
   return (

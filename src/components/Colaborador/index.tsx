@@ -1,6 +1,7 @@
+import { IColaborador } from '../../compartilhado/interface/IColaborador';
 import "./Colaborador.css";
 
-export function Colaborador({ nome, cargo, imagem, corDeFundo }) {
+export function Colaborador({ nome, cargo, imagem, corDeFundo }:IColaborador) {
   return (
     <div className="colaborador" >
       <div className="contentIMG" style={{backgroundColor: corDeFundo}}>

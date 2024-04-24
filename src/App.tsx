@@ -1,10 +1,11 @@
 import { Banner } from "./components/Banner";
-import { CampoTexto } from "./components/CampoTexto";
 import { Formulario } from "./components/Formulario";
 import { useState } from "react";
 import "./reset.css";
 import { Time } from "./components/Time";
 import { Rodape } from './components/Rodape';
+import imagem from "./assets/banner.png"
+import { IColaborador } from './compartilhado/interface/IColaborador';
 export function App() {
   const times = [
     {
@@ -43,14 +44,14 @@ export function App() {
       corSecundaria: "#ffeedf",
     },
   ];
-  const [colaboradores, setColaboradores] = useState([]);
-  function novoColaboradorAdicionador(colaborador) {
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([]);
+  function novoColaboradorAdicionador(colaborador:IColaborador) {
     setColaboradores([...colaboradores, colaborador]);
     console.log(colaboradores);
   }
   return (
     <div>
-      <Banner />
+      <Banner enderecoImagem={imagem} textoAlternativo='Banner do aplicativo Organo'/>
       <Formulario
         aoColaboradorCadastrado={(colaborador) =>{
           debugger

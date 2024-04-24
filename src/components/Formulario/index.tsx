@@ -4,12 +4,20 @@ import { ListaSuspensa } from "../ListaSuspensa";
 import { useState } from "react";
 
 import "./Formulario.css";
-export function Formulario({ aoColaboradorCadastrado, times } = props) {
+import { IColaborador } from "../../compartilhado/interface/IColaborador";
+interface FormularioProps {
+  aoColaboradorCadastrado: (colaborador: IColaborador) => void;
+  times: string[];
+}
+export function Formulario({
+  aoColaboradorCadastrado,
+  times,
+}: FormularioProps) {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
-  function aoSalvar(event) {
+  function aoSalvar(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     aoColaboradorCadastrado({
       nome,
@@ -17,10 +25,10 @@ export function Formulario({ aoColaboradorCadastrado, times } = props) {
       imagem,
       time,
     });
-    setNome('')
-    setCargo('')
-    setImagem('')
-    setTime('')
+    setNome("");
+    setCargo("");
+    setImagem("");
+    setTime("");
   }
   return (
     <section className="formulario">
@@ -47,6 +55,7 @@ export function Formulario({ aoColaboradorCadastrado, times } = props) {
           aoAlterado={(valor) => setImagem(valor)}
         />
         <ListaSuspensa
+          obrigatorio={true}
           label="Time"
           itens={times}
           valor={time}

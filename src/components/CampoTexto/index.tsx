@@ -1,12 +1,19 @@
 import "./CampoTexto.css";
+interface CampoTextoProps {
+  aoAlterado: (valor: string) => void;
+  placeholder: string;
+  label: string;
+  valor: string;
+  obrigatorio?: boolean;
+}
 export function CampoTexto({
   label,
   placeholder,
-  obrigatorio,
   valor,
+  obrigatorio=false,
   aoAlterado,
-} = props) {
-  function aoDigitar(event) {
+} :CampoTextoProps) {
+  function aoDigitar(event:React.ChangeEvent<HTMLInputElement>) {
     aoAlterado(event.target.value);
   }
   return (
